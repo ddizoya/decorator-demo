@@ -1,4 +1,4 @@
-# Cognizant Demo: Charlene's Coffee Corner
+#Demo: Charlene's Coffee Corner
 
 ## What about the design pattern I chose?
 
