@@ -2,12 +2,18 @@ package net.decorator.demo.product.impl;
 
 import net.decorator.demo.product.Product;
 
-public class Juice implements Product {
+public class Juice extends Product {
 
-    private float basePrice = 2f;
+    public Juice() {
+        super(2f);
+    }
+
+    public Juice(Float price) {
+        super(price);
+    }
 
     public Float price() {
-        return basePrice;
+        return this.price;
     }
 
     @Override

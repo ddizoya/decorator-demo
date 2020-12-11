@@ -1,4 +1,4 @@
-package net.decorator.demo.ticket;
+package net.decorator.demo.service;
 
 import net.decorator.demo.product.Product;
 
@@ -8,4 +8,5 @@ public interface Ticket {
 
     void print();
 
+    Ticket availablePromotions(Promotion... promotions);
 }

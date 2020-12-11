@@ -1,18 +1,22 @@
-package net.decorator.demo.ticket;
+package net.decorator.demo.service.impl;
 
 import net.decorator.demo.product.Product;
+import net.decorator.demo.service.Promotion;
+import net.decorator.demo.service.Ticket;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
 
 public class TicketImpl implements Ticket {
 
     private List<Product> order;
+    private List<Promotion> promotions;
 
     public TicketImpl() {
-        this.order = new ArrayList<Product>();
+        this.order = new ArrayList<>();
+        this.promotions = new ArrayList<>();
     }
 
     public Ticket add(Product product) {
@@ -34,9 +38,22 @@ public class TicketImpl implements Ticket {
 
         this.header();
         this.body();
-        this.total(order, totalAmount -> totalAmount); //you could apply some disscount here in the future before printing
+        this.total(order); //you could apply some disscount here in the future before printing
         this.footer();
 
+    }
+
+    private Float appyPromotions(Float originalPrice) {
+
+        return this.promotions
+                .stream()
+                .reduce(originalPrice, (aFloat, promotion) -> promotion.apply(aFloat), Float::sum);
+    }
+
+    @Override
+    public Ticket availablePromotions(Promotion... promotions) {
+        this.promotions.addAll(Arrays.asList(promotions));
+        return this;
     }
 
 
@@ -46,27 +63,26 @@ public class TicketImpl implements Ticket {
 
     private void body() {
         this.order.forEach(product -> System.out.println(String.format("\t- %s - (%.2f €)", product, product.price())));
+
+        System.out.println(String.format("\n\t-----------------------------------"));
+        this.promotions.forEach(System.out::println);
+        System.out.println(String.format("\n\t-----------------------------------"));
     }
 
-    /**
-     * Calculates the total price amount. The totalConsumer let you handle the total prince in order
-     * to apply discounts or any price manipulation before print it
-     *
-     * @param order
-     * @param totalFunction
-     */
-    private void total(List<Product> order, Function<Float, Float> totalFunction) {
+    private void total(List<Product> order) {
 
-        Float sum = order
+
+        Float totalPrice = order
                 .stream()
                 .map(Product::price)
                 .reduce(Float::sum)
                 .orElse(0f);
 
-        Float total = totalFunction.apply(sum);
+        Float discountedPrice = this.appyPromotions(totalPrice);
 
-        System.out.println(String.format("\n\t\t\t\tTOTAL: %.2f €", total));
+        System.out.println(String.format("\n\t\t\t\tTOTAL: %.2f €", discountedPrice));
     }
+
 
     private void footer() {
         System.out.println(String.format("\n\t*** THANKS FOR YOUR VISIT ***"));

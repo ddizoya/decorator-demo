@@ -1,5 +1,16 @@
 package net.decorator.demo.product;
 
-public interface Product {
-   Float price();
+public abstract class Product {
+
+   protected Float price = 0.95f;
+
+   public Product(Float price) {
+      this.price = price;
+   }
+
+   public abstract Float price();
+
+   public void setPrice(Float price) {
+      this.price = price;
+   }
 }
