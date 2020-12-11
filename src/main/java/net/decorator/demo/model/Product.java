@@ -1,4 +1,4 @@
-package net.decorator.demo.product;
+package net.decorator.demo.model;
 
 public abstract class Product {
 

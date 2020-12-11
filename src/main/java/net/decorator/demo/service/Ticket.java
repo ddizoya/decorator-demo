@@ -1,6 +1,6 @@
 package net.decorator.demo.service;
 
-import net.decorator.demo.product.Product;
+import net.decorator.demo.model.Product;
 
 public interface Ticket {
 

@@ -1,8 +1,8 @@
 package net.decorator.demo.extra;
 
-import net.decorator.demo.extra.impl.*;
-import net.decorator.demo.product.Product;
-import net.decorator.demo.product.impl.Coffee;
+import net.decorator.demo.model.Product;
+import net.decorator.demo.model.decorator.impl.*;
+import net.decorator.demo.model.impl.Coffee;
 import org.junit.Assert;
 import org.junit.Test;
 

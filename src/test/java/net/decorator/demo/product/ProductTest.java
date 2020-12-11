@@ -1,9 +1,10 @@
 package net.decorator.demo.product;
 
 
-import net.decorator.demo.product.impl.Coffee;
-import net.decorator.demo.product.impl.Juice;
-import net.decorator.demo.product.impl.Roll;
+import net.decorator.demo.model.Product;
+import net.decorator.demo.model.impl.Coffee;
+import net.decorator.demo.model.impl.Juice;
+import net.decorator.demo.model.impl.Roll;
 import org.junit.Assert;
 import org.junit.Test;
 

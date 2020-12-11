@@ -1,6 +1,6 @@
-package net.decorator.demo.product.impl;
+package net.decorator.demo.model.impl;
 
-import net.decorator.demo.product.Product;
+import net.decorator.demo.model.Product;
 
 public class Coffee extends Product {
 

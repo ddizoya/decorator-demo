@@ -1,6 +1,6 @@
 package net.decorator.demo.service.impl;
 
-import net.decorator.demo.product.Product;
+import net.decorator.demo.model.Product;
 import net.decorator.demo.service.Promotion;
 import net.decorator.demo.service.Ticket;
 

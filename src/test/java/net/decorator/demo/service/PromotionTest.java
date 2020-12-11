@@ -1,8 +1,8 @@
 package net.decorator.demo.service;
 
-import net.decorator.demo.product.Product;
-import net.decorator.demo.product.impl.Coffee;
-import net.decorator.demo.product.impl.Roll;
+import net.decorator.demo.model.Product;
+import net.decorator.demo.model.impl.Coffee;
+import net.decorator.demo.model.impl.Roll;
 import net.decorator.demo.service.impl.HappyHourPromotion;
 import net.decorator.demo.service.impl.PercentagePromotion;
 import org.junit.Test;

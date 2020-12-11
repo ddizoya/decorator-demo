@@ -1,9 +1,9 @@
 package net.decorator.demo;
 
-import net.decorator.demo.extra.impl.*;
-import net.decorator.demo.product.impl.Coffee;
-import net.decorator.demo.product.impl.Juice;
-import net.decorator.demo.product.impl.Roll;
+import net.decorator.demo.model.decorator.impl.*;
+import net.decorator.demo.model.impl.Coffee;
+import net.decorator.demo.model.impl.Juice;
+import net.decorator.demo.model.impl.Roll;
 import net.decorator.demo.service.Promotion;
 import net.decorator.demo.service.impl.HappyHourPromotion;
 import net.decorator.demo.service.impl.PercentagePromotion;

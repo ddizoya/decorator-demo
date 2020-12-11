@@ -1,6 +1,6 @@
-package net.decorator.demo.extra;
+package net.decorator.demo.model.decorator;
 
-import net.decorator.demo.product.Product;
+import net.decorator.demo.model.Product;
 
 public abstract class Decorator extends Product {
 

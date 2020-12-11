@@ -1,7 +1,7 @@
-package net.decorator.demo.extra.impl;
+package net.decorator.demo.model.decorator.impl;
 
-import net.decorator.demo.extra.Decorator;
-import net.decorator.demo.product.Product;
+import net.decorator.demo.model.Product;
+import net.decorator.demo.model.decorator.Decorator;
 
 public class Large extends Decorator {
 

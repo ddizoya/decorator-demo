@@ -1,9 +1,9 @@
 package net.decorator.demo.extra;
 
-import net.decorator.demo.extra.impl.FreshlySqueezed;
-import net.decorator.demo.extra.impl.Orange;
-import net.decorator.demo.product.Product;
-import net.decorator.demo.product.impl.Juice;
+import net.decorator.demo.model.Product;
+import net.decorator.demo.model.decorator.impl.FreshlySqueezed;
+import net.decorator.demo.model.decorator.impl.Orange;
+import net.decorator.demo.model.impl.Juice;
 import org.junit.Assert;
 import org.junit.Test;
 
